@@ -33,11 +33,11 @@
             }
         }
 
-        RightTriangle triangle1 = new RightTriangle();
-        RightTriangle triangle2 = new RightTriangle(a, b);
+        RightTriangle triangle2 = new RightTriangle();
+        RightTriangle triangle1 = new RightTriangle(a, b);
 
-        Console.WriteLine("Созданный треугольник: " + triangle2);
-        if (triangle2)
+        Console.WriteLine("Созданный треугольник: " + triangle1);
+        if (triangle1)
         {
             Console.WriteLine("Треугольник существует!");
         }
@@ -45,17 +45,17 @@
         {
             Console.WriteLine("Треугольник не существует :(");
         }
-        Console.WriteLine("Его площадь: " + triangle2.CalcArea());
-        triangle2++;
+        Console.WriteLine("Его площадь: " + triangle1.CalcArea());
+        triangle1++;
         Console.WriteLine("Его площадь после умножения катетов на 2: " + triangle2.CalcArea());
-        triangle2--;
+        triangle1--;
         Console.WriteLine("Его площадь после деления катетов на 2: " + (double)triangle2);
 
-        double area2 = (double)triangle2;
+        double area1 = (double)triangle1;
         Console.WriteLine("Площадь расчитанная через перегрузку: " + area2);
 
-        Console.WriteLine("\nТреугольник созданный автоматиечски: " + triangle1);
-        if (triangle1 >= triangle2)
+        Console.WriteLine("\nТреугольник созданный автоматиечски: " + triangle2);
+        if (triangle2 >= triangle1)
         {
             Console.WriteLine("Треугольник созданный автоматически больше или равен созданному вручную");
         }
@@ -64,11 +64,11 @@
             Console.WriteLine("Треугольник созданный автоматически меньше созданному вручную");
         }
 
-        triangle2.B = -10;
-        Console.WriteLine("Изменяем сторону на некорректную: " + triangle2);
-        Console.WriteLine("Теперь его площадь: " + (double)triangle2);
+        triangle1.B = -10;
+        Console.WriteLine("Изменяем сторону на некорректную: " + triangle1);
+        Console.WriteLine("Теперь его площадь: " + (double)triangle1);
         Console.WriteLine("Также: ");
-        if (triangle2)
+        if (triangle1)
         {
             Console.WriteLine("Треугольник существует!");
         }
