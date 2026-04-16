@@ -51,9 +51,6 @@
         triangle1--;
         Console.WriteLine("Его площадь после деления катетов на 2: " + (double)triangle2);
 
-        double area1 = (double)triangle1;
-        Console.WriteLine("Площадь расчитанная через перегрузку: " + area2);
-
         Console.WriteLine("\nТреугольник созданный автоматиечски: " + triangle2);
         if (triangle2 >= triangle1)
         {
