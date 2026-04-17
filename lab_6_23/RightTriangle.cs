@@ -24,7 +24,10 @@ internal class RightTriangle
 
     public double A
     {
-        get { return a; }
+        get 
+        { 
+            return a; 
+        }
         set
         {
             this.a = value;
@@ -32,7 +35,10 @@ internal class RightTriangle
     }
     public double B
     {
-        get { return b; }
+        get 
+        { 
+            return b; 
+        }
         set
         {
             this.b = value;

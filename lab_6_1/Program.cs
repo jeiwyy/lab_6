@@ -1,6 +1,4 @@
 ﻿//4 вариант
-using Microsoft.Win32.SafeHandles;
-
 internal class Program
 {
     private static void Main(string[] args)
@@ -43,7 +41,7 @@ internal class Program
         Cherry newCherry = new Cherry(age, height);
         Console.WriteLine("Новосозданная вишня: ");
         Console.WriteLine(newCherry);
-        Console.WriteLine("Возраст самой молодой вишни: " + Cherry.MinVal(newCherry, basicCherry));
+        Console.WriteLine("Возраст самой молодой вишни: " + newCherry.MinVal(basicCherry));
         Console.WriteLine("_-_-_-_-_-_-_-_-_-_-_-_");
         CherryVariety simpleCherry = new CherryVariety();
         Console.WriteLine("Создание нового дерева вишни с указанным сортом...");

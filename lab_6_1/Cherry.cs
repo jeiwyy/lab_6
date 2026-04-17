@@ -1,8 +1,8 @@
 internal class Cherry
 {
-    private int berries; // кол-во ягод
-    private int height; // в см
-    private int age; //в месяцах
+    private int berries;
+    private int height;
+    private int age;
 
     public Cherry()
     {
@@ -27,7 +27,10 @@ internal class Cherry
 
     public int Age
     {
-        get { return age; }
+        get 
+        { 
+            return age; 
+        }
         set
         {
             if (value > 0 && value < 1200)
@@ -40,13 +43,16 @@ internal class Cherry
             }
             else
             {
-                Console.WriteLine("Ошибка ввода возраста вишни, введите реальное значение!");
+                Console.WriteLine("Ошибка ввода возраста вишни!");
             }
         }
     }
     public int Height
     {
-        get { return height; }
+        get 
+        { 
+            return height; 
+        }
         set
         {
             if (value > 20 && value < 1000)
@@ -67,13 +73,16 @@ internal class Cherry
             }
             else
             {
-                Console.WriteLine("Ошибка ввода высоты вишни, введите реальное значение!");
+                Console.WriteLine("Ошибка ввода высоты вишни!");
             }
         }   
     }
     public int Berries
     {
-        get { return berries; }
+        get 
+        { 
+            return berries; 
+        }
         set 
         {
             if (age > 24)
@@ -89,10 +98,16 @@ internal class Cherry
         }
     }
 
-    public static int MinVal(Cherry cherry1, Cherry cherry2)
+    public int MinVal(Cherry cherry2)
     {
-        if (cherry1.Age > cherry2.Age) { return cherry2.Age; }
-        else { return cherry1.Age; }
+        if (Age > cherry2.Age) 
+        { 
+            return cherry2.Age; 
+        }
+        else 
+        { 
+            return Age; 
+        }
     }
 
     public override string ToString()
