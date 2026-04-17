@@ -1,27 +1,27 @@
 internal class Cherry
 {
-    private int berries;
-    private int height;
-    private int age;
+    private int _berries;
+    private int _height;
+    private int _age;
 
     public Cherry()
     {
-        berries = 5;
-        height = 150;
-        age = 16;
+        _berries = 5;
+        _height = 150;
+        _age = 16;
     }
 
-    public Cherry(int age, int height)
+    public Cherry(int _age, int _height)
     {
-        this.Age = age;
-        this.Height = height;
+        this.Age = _age;
+        this.Height = _height;
     }
 
     public Cherry(Cherry cherry)
     {
-        this.age = cherry.Age;
-        this.height = cherry.Height;
-        this.berries = cherry.Berries;
+        this._age = cherry.Age;
+        this._height = cherry.Height;
+        this._berries = cherry.Berries;
     }
 
 
@@ -29,16 +29,16 @@ internal class Cherry
     {
         get 
         { 
-            return age; 
+            return _age; 
         }
         set
         {
             if (value > 0 && value < 1200)
             {
-                age = value;
-                if (age > 24)
+                _age = value;
+                if (_age > 24)
                 {
-                    berries = Random.Shared.Next(100, 30000);
+                    _berries = Random.Shared.Next(100, 30000);
                 }
             }
             else
@@ -51,24 +51,24 @@ internal class Cherry
     {
         get 
         { 
-            return height; 
+            return _height; 
         }
         set
         {
             if (value > 20 && value < 1000)
             {
-                if (value > height && height > 30)
+                if (value > _height && _height > 30)
                 {
-                    age += (value - height) / 20;
-                    if (age > 24)
+                    _age += (value - _height) / 20;
+                    if (_age > 24)
                     {
-                        berries = Random.Shared.Next(100, 30000);
+                        _berries = Random.Shared.Next(100, 30000);
                     }
-                    height = value;
+                    _height = value;
                 }
                 else
                 {
-                    height = value;
+                    _height = value;
                 }
             }
             else
@@ -81,18 +81,18 @@ internal class Cherry
     {
         get 
         { 
-            return berries; 
+            return _berries; 
         }
         set 
         {
-            if (age > 24)
+            if (_age > 24)
             {
-                berries = value + Random.Shared.Next(100, 10000);
-                age += 3;
+                _berries = value + Random.Shared.Next(100, 10000);
+                _age += 3;
             }
             else
             {
-                berries = 0;
+                _berries = 0;
             }
             
         }
@@ -112,10 +112,10 @@ internal class Cherry
 
     public override string ToString()
     {
-        string s = "Возраст вишни: " + age + " мес.";
-        s += "\nВысота вишни: " + height + " см";
-        int ber10 = berries % 10;
-        int ber100 = berries % 100;
+        string s = "Возраст вишни: " + _age + " мес.";
+        s += "\nВысота вишни: " + _height + " см";
+        int ber10 = _berries % 10;
+        int ber100 = _berries % 100;
         string berry;
         if (ber100 >= 11 && ber100 <= 14)
         {
@@ -133,7 +133,7 @@ internal class Cherry
         {
             berry = " ягод.";
         }
-        s += "\nНа вишне " + berries + berry;
+        s += "\nНа вишне " + _berries + berry;
         return s;
     }
 }

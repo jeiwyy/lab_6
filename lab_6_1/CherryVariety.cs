@@ -1,50 +1,50 @@
 internal class CherryVariety : Cherry
 {
-    private string varietyName;
-    private int frostResist;
-    private double yield;
+    private string _varietyName;
+    private int _frostResist;
+    private double _yield;
 
     public CherryVariety()
     :base()
     {
-        varietyName = "Обыкновенная";
-        frostResist = 5;
-        yield = 1;
+        _varietyName = "Обыкновенная";
+        _frostResist = 5;
+        _yield = 1;
     }
 
     public CherryVariety(int age, int height, 
-        string varietyName, int frostResist, double yield)
+        string _varietyName, int _frostResist, double _yield)
     :base(age, height)
     {
-        this.varietyName = varietyName;
-        this.frostResist = frostResist;
-        this.Yield = yield;
+        this._varietyName = _varietyName;
+        this._frostResist = _frostResist;
+        this.Yield = _yield;
     }
     public string VarietyName
     {
         get 
         { 
-            return varietyName; 
+            return _varietyName; 
         }
     }
     public int FrostResist
     {
         get 
         { 
-            return frostResist; 
+            return _frostResist; 
         }
     }
     public double Yield
     {
         get 
         { 
-            return yield; 
+            return _yield; 
         }
         set
         {
             if (value > 0 && value <= 10)
             {
-                this.yield = value;
+                this._yield = value;
             }
             else
             {
@@ -54,14 +54,14 @@ internal class CherryVariety : Cherry
         }
     }
 
-    public static CherryVariety MergeVariety(string varietyName, 
+    public static CherryVariety MergeVariety(string _varietyName, 
         CherryVariety cherry1, CherryVariety cherry2)
     {
-        int frostResist = (cherry1.FrostResist + cherry2.FrostResist) / 2;
+        int _frostResist = (cherry1.FrostResist + cherry2.FrostResist) / 2;
         double temp;
         temp = (cherry1.Yield + cherry2.Yield) / 2 + Random.Shared.NextDouble();
         double yield = Math.Round(temp, 2);
-        return new CherryVariety(16, 150, varietyName, frostResist, yield);
+        return new CherryVariety(16, 150, _varietyName, _frostResist, yield);
     }
 
     public static void Comparison(CherryVariety cherry1, CherryVariety cherry2)
@@ -185,15 +185,15 @@ internal class CherryVariety : Cherry
             berry = " ягод.";
         }
         s += "\nНа вишне " + Berries + berry;
-        s += "\nСорт вишни: " + varietyName;
-        s += "\nМорозоустойчивость: " + frostResist + "/10";
-        if (yield > 1)
+        s += "\nСорт вишни: " + _varietyName;
+        s += "\nМорозоустойчивость: " + _frostResist + "/10";
+        if (_yield > 1)
         {
-            s += "\nУрожайность лучше в " + yield + " раз";   
+            s += "\nУрожайность лучше в " + _yield + " раз";   
         }
-        else if (yield < 1)
+        else if (_yield < 1)
         {
-            s += "\nУрожайность хуже в " + Math.Round(1 / yield, 2) + " раз"; 
+            s += "\nУрожайность хуже в " + Math.Round(1 / _yield, 2) + " раз"; 
         }
         return s;
     }

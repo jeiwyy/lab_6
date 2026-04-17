@@ -1,20 +1,20 @@
 internal class RightTriangle
 {
-    private double a;
-    private double b;
+    private double _a;
+    private double _b;
 
     public RightTriangle()
     {
-        a = 2;
-        b = 2;
+        _a = 2;
+        _b = 2;
     }
 
-    public RightTriangle(double a, double b)
+    public RightTriangle(double _a, double _b)
     {
-        if (a > 0 && b > 0)
+        if (_a > 0 && _b > 0)
         {
-            this.a = a;
-            this.b = b;
+            this._a = _a;
+            this._b = _b;
         }
         else
         {
@@ -26,30 +26,30 @@ internal class RightTriangle
     {
         get 
         { 
-            return a; 
+            return _a; 
         }
         set
         {
-            this.a = value;
+            this._a = value;
         }
     }
     public double B
     {
         get 
         { 
-            return b; 
+            return _b; 
         }
         set
         {
-            this.b = value;
+            this._b = value;
         }
     }
 
     public double CalcArea()
     {
-        if (a > 0 && b > 0)
+        if (_a > 0 && _b > 0)
         {
-            return a * b / 2;
+            return _a * _b / 2;
         }
         else
         {
@@ -59,22 +59,22 @@ internal class RightTriangle
 
     public override string ToString()
     {
-        return "a = " + a + " b = " + b;
+        return "a = " + _a + " b = " + _b;
     }
 
     public static RightTriangle operator ++(RightTriangle triangle)
     {
-        return new RightTriangle(triangle.a * 2, triangle.b * 2);
+        return new RightTriangle(triangle._a * 2, triangle._b * 2);
     }
 
     public static RightTriangle operator --(RightTriangle triangle)
     {
-        return new RightTriangle(triangle.a / 2, triangle.b / 2);
+        return new RightTriangle(triangle._a / 2, triangle._b / 2);
     }
 
     public static explicit operator double(RightTriangle triangle)
     {
-        if (triangle.a > 0 && triangle.b > 0)
+        if (triangle._a > 0 && triangle._b > 0)
         {
             return triangle.CalcArea();
         }
@@ -86,7 +86,7 @@ internal class RightTriangle
 
     public static implicit operator bool(RightTriangle triangle)
     {
-        if (triangle.a > 0 && triangle.b > 0)
+        if (triangle._a > 0 && triangle._b > 0)
         {
             return true;
         }
